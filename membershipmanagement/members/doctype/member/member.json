@@ -1,0 +1,128 @@
+{
+ "autoname": "field:full_name",
+ "creation": "2019-12-04 08:08:12.461341",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "member",
+  "full_name",
+  "balance",
+  "column_break_4",
+  "joining_date",
+  "end_date",
+  "price_break_section",
+  "plan",
+  "duration",
+  "plan_col_break_column",
+  "plan_price",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "unique": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Joining Date",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Balance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "plan",
+   "fieldtype": "Link",
+   "label": "Plan",
+   "options": "Membership Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Duration (months)",
+   "options": "1\n3\n6\n8\n10\n12",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "price_break_section",
+   "fieldtype": "Section Break",
+   "label": "Plans"
+  },
+  {
+   "fieldname": "plan_price",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Plan Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Total Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "plan_col_break_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "modified": "2019-12-04 12:23:06.934641",
+ "modified_by": "Administrator",
+ "module": "Members",
+ "name": "Member",
+ "name_case": "Title Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Member Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

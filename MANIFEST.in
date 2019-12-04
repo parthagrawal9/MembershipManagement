@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include membershipmanagement *.css
+recursive-include membershipmanagement *.csv
+recursive-include membershipmanagement *.html
+recursive-include membershipmanagement *.ico
+recursive-include membershipmanagement *.js
+recursive-include membershipmanagement *.json
+recursive-include membershipmanagement *.md
+recursive-include membershipmanagement *.png
+recursive-include membershipmanagement *.py
+recursive-include membershipmanagement *.svg
+recursive-include membershipmanagement *.txt
+recursive-exclude membershipmanagement *.pyc
