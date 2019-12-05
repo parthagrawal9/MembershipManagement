@@ -79,6 +79,14 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
+
+doc_events={
+    "Member":{
+        "after_insert": "membershipmanagement.api.send_welcome_email",
+        "after_insert": "membershipmanagement.api.add_balance_log"
+    }
+}
+
 # doc_events = {
 # 	"*": {
 # 		"on_update": "method",
