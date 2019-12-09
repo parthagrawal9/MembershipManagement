@@ -1,6 +1,7 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
+from frappe.utils import date_diff, nowdate
 
 def send_welcome_email(doc,method):
     msg = " ".join([
@@ -28,4 +29,8 @@ def add_balance_log(doc,method):
         'balance': (doc.balance - doc.total)
     })
     doc.save()
+
+
+
+
 

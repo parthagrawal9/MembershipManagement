@@ -98,6 +98,12 @@ doc_events={
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {
+    "daily": [
+        "membershipmanagement.tasks.daily"
+    ]
+}
+
 # scheduler_events = {
 # 	"all": [
 # 		"membershipmanagement.tasks.all"
