@@ -3,6 +3,10 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import date_diff, nowdate
 
+def new_member(doc,method):
+    send_welcome_email(doc,method)
+    add_balance_log(doc,method)
+
 def send_welcome_email(doc,method):
     msg = " ".join([
         'Welcome to Membership Management System <b>',doc.full_name, 
