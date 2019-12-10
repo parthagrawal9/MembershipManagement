@@ -34,14 +34,6 @@ def add_balance_log(doc,method):
     })
     doc.save()
 
-# def get_plan_benefit(doc,method):
-#     plan = frappe.get_all('Benefit', fields=['title', 'description'])
-#     for plan in plan:
-#         doc.append('plan_benefit', {
-#         'plan_benefit_name': plan.title
-#     })
-#     doc.save()
-
 
 
 
