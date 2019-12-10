@@ -19,7 +19,6 @@ frappe.ui.form.on('Member', {
 			frappe.model.set_value(cdt, cdn, "full_name",null);
 		}
 	}
-
 });
 
 frappe.ui.form.on('Member', {
@@ -99,11 +98,3 @@ frappe.ui.form.on("Member", {
 		frappe.model.set_value(cdt, cdn, "balance_log.amount", meber.total);
 	} 
 });
-
-// frappe.ui.form.on("Membership Plan",{
-// 	onload:function(frm) {
-// 		var child = cur_frm.add_child("Benefit");
-// 		// frappe.model.set_value(child.doctype, child.name, "title", "My Item Code")
-// 		cur_frm.refresh_field("Benefit")
-// 	}
-// });

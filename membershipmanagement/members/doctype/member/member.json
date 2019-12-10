@@ -18,7 +18,8 @@
   "plan_price",
   "total",
   "balance_section",
-  "balance_log"
+  "balance_log",
+  "plan_benefit"
  ],
  "fields": [
   {
@@ -115,9 +116,15 @@
    "label": "Balance Log",
    "options": "Balance Log",
    "read_only": 1
+  },
+  {
+   "fieldname": "plan_benefit",
+   "fieldtype": "Table",
+   "label": "Plan Benefit",
+   "options": "Plan Benefit"
   }
  ],
- "modified": "2019-12-05 15:01:10.814675",
+ "modified": "2019-12-10 11:25:09.502866",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Member",

@@ -84,6 +84,9 @@ doc_events={
     "Member":{
         "after_insert": "membershipmanagement.api.new_member"
     }
+    # "Membership Plan":{
+    #     "on_load": "membershipmanagement.api.get_plan_benefit"
+    # }
 }
 
 # doc_events = {

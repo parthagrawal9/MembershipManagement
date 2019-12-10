@@ -6,7 +6,9 @@
  "engine": "InnoDB",
  "field_order": [
   "plan_name",
-  "price"
+  "price",
+  "benefit_section",
+  "plan_benefit"
  ],
  "fields": [
   {
@@ -23,9 +25,21 @@
    "in_list_view": 1,
    "label": "Price /mon",
    "reqd": 1
+  },
+  {
+   "fieldname": "plan_benefit",
+   "fieldtype": "Table",
+   "label": "Plan Benefit",
+   "options": "Plan Benefit"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "benefit_section",
+   "fieldtype": "Section Break",
+   "label": "Benefit"
   }
  ],
- "modified": "2019-12-09 11:34:15.044256",
+ "modified": "2019-12-10 11:42:20.448366",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Membership Plan",

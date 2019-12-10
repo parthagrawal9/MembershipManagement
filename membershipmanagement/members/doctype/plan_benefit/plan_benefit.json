@@ -1,0 +1,36 @@
+{
+ "creation": "2019-12-10 11:24:47.385880",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_benefit_name",
+  "plan_benefit_check"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_benefit_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "plan_benefit_check",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Check"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-12-10 11:24:47.385880",
+ "modified_by": "Administrator",
+ "module": "Members",
+ "name": "Plan Benefit",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
