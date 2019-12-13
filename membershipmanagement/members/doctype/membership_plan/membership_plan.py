@@ -4,8 +4,8 @@
 
 from __future__ import unicode_literals
 import frappe
-import frappe.utils
-from datetime import date
+# import frappe.utils
+# from datetime import date
 from frappe import _
 from frappe.model.document import Document
 

@@ -19,12 +19,19 @@ def get_data():
                     				"label": _("Membership Plan"),
 						"description": _("Membership Management")
 					},
-{
+					{
 						"type": "doctype",
 						"name": "Benefit",
                     				"label": _("Benefit"),
 						"description": _("Membership Management")
+					},
+					{
+						"type": "doctype",
+						"name": "Member Request",
+                    				"label": _("Member Request"),
+						"description": _("Membership Management")
 					}
+
      			       ]
     		 }
     		]

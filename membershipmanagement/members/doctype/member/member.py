@@ -29,4 +29,3 @@ def get_total(plan_price, duration):
 def get_plan_price(plan):
 	planDetail = frappe.get_doc("Membership Plan",plan)
 	return planDetail.price
-

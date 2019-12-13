@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 
 cur_frm.toggle_display("end_date", true);
+
 frappe.ui.form.on('Member', {
 	member: function(frm, cdt, cdn){
 		var member = frappe.model.get_doc(cdt, cdn);
@@ -86,6 +87,7 @@ frappe.ui.form.on("Member", {
 	joining_date: function(frm, cdt, cdn){
 		var member = frappe.model.get_doc(cdt, cdn);
 		frappe.model.set_value(cdt, cdn, "end_date", frappe.datetime.add_months(member.joining_date, member.duration));
+		
 	} 
 });
 
@@ -98,3 +100,4 @@ frappe.ui.form.on("Member", {
 		frappe.model.set_value(cdt, cdn, "balance_log.amount", meber.total);
 	} 
 });
+

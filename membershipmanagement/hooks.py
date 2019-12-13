@@ -83,7 +83,15 @@ app_license = "MIT"
 doc_events={
     "Member":{
         "after_insert": "membershipmanagement.api.new_member"
-    }
+    },
+    "Member Request":{
+        "after_insert": "membershipmanagement.api.new_membership_request",
+        "on_update": "membershipmanagement.api.membership_state_change",
+    }#,
+    # "Email Queue":{
+    #     "after_insert": "membershipmanagement.api.email_queue_send_now"
+    # }
+
 }
 
 # doc_events = {

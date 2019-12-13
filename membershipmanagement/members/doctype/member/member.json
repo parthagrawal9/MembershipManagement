@@ -11,6 +11,7 @@
   "column_break_4",
   "joining_date",
   "end_date",
+  "status",
   "price_break_section",
   "plan",
   "duration",
@@ -27,8 +28,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Member",
-   "options": "User",
-   "reqd": 1
+   "options": "User"
   },
   {
    "fieldname": "full_name",
@@ -55,6 +55,7 @@
    "reqd": 1
   },
   {
+   "default": "0",
    "fieldname": "balance",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -122,9 +123,16 @@
    "fieldtype": "Table",
    "label": "Plan Benefit",
    "options": "Plan Benefit"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nRejected\nApproved\nApplied"
   }
  ],
- "modified": "2019-12-10 11:25:09.502866",
+ "modified": "2019-12-12 11:37:04.487336",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Member",
