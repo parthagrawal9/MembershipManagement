@@ -1,29 +1,30 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
-from frappe.utils import date_diff, nowdate
+from frappe.utils import date_diff, nowdate,datetime
+import membershipmanagement.members.doctype.member.member as membershipmanagement
 
 def new_member(doc,method):
     send_welcome_email(doc,method)
     add_balance_log(doc,method)
 
 def send_welcome_email(doc,method):
-    msg = " ".join([
-        'Welcome to Membership Management System <b>',doc.full_name,
-        '<br>Plan:</b> ', doc.plan, 
-        '<br><b>Start Date:</b> ',doc.joining_date, 
-        '<br><b>End Date:</b> ',doc.end_date,
-        '<br><b>Balance:</b> ',str(doc.balance),
-        '<br><b>Status:</b ',doc.status
-        ])
-    frappe.sendmail(
-        recipients=[doc.member],
-        sender=frappe.session.user,
-        subject="New Membership",
-        message=msg,
-        now=True
-    )
-    frappe.msgprint(_("Welcome Email Sent!"))
+    print('hi')
+    # msg = " ".join([
+    #     'Welcome to Membership Management System <b>',doc.full_name,
+    #     '<br>Plan:</b> ', doc.plan, 
+    #     '<br><b>Start Date:</b> ',doc.joining_date, 
+    #     '<br><b>End Date:</b> ',doc.end_date,
+    #     '<br><b>Balance:</b> ',str(doc.balance)
+    #     ])
+    # frappe.sendmail(
+    #     recipients=[doc.member],
+    #     sender=frappe.session.user,
+    #     subject="New Membership",
+    #     message=msg,
+    #     now=True
+    # )
+    # frappe.msgprint(_("Welcome Email Sent!"))
 
 def add_balance_log(doc,method):
     # doc = frappe.get_doc('Member', doc.member)
@@ -55,25 +56,33 @@ def new_membership_request(doc,method):
 
 def membership_state_change(doc,method):
     if doc.status != doc.prev_status:
-        print('1')
         if doc.status == 'Accepted':
-            print('2')
-            user = frappe.new_doc('User')
-            # print(doc)
-            # print(user)
-            # print(type(doc.email))
-            user.email = doc.email
-            user.first_name = doc.full_name
-            user.save()
-
-        # print('Current : ',doc.status)
-        # print('Previous : ',doc.prev_status)
-        print('3')
+            add_new_user(doc,method)
+            add_new_member(doc,method)
+        
         doc.prev_status = doc.status
         doc.save()
-        # print('Previous : ',doc.prev_status)
-        print('4')
+
         email_queue_send_now()
+
+def add_new_member(doc,method):
+    member = frappe.new_doc('Member')
+    member.member = doc.email
+    member.full_name = doc.full_name
+    member.balance = 50000
+    member.joining_date = nowdate()
+    member.end_date = frappe.utils.data.add_months(member.joining_date, int(doc.duration))
+    member.plan = doc.plan
+    member.duration = doc.duration
+    member.plan_price = membershipmanagement.get_plan_price(doc.plan)
+    member.total = membershipmanagement.get_total(member.plan_price,member.duration)
+    member.save()
+
+def add_new_user(doc,method):
+    user = frappe.new_doc('User')
+    user.email = doc.email
+    user.first_name = doc.full_name
+    user.save()
 
 def email_queue_send_now():
     data = frappe.get_list('Email Queue', filters={'Status': 'Not Sent'})

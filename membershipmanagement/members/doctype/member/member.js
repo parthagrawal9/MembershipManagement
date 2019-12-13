@@ -86,8 +86,7 @@ frappe.ui.form.on('Member', {
 frappe.ui.form.on("Member", {
 	joining_date: function(frm, cdt, cdn){
 		var member = frappe.model.get_doc(cdt, cdn);
-		frappe.model.set_value(cdt, cdn, "end_date", frappe.datetime.add_months(member.joining_date, member.duration));
-		
+		frappe.model.set_value(cdt, cdn, "end_date", frappe.datetime.add_months(member.joining_date, member.duration));	
 	} 
 });
 
@@ -97,7 +96,7 @@ frappe.ui.form.on("Member", {
 		frappe.model.set_value(cdt, cdn, "balance_log.date", member.joining_date);
 		frappe.model.set_value(cdt, cdn, "balance_log.bal", (member.balance-member.total));
 		frappe.model.set_value(cdt, cdn, "balance_log.description", "welcome");
-		frappe.model.set_value(cdt, cdn, "balance_log.amount", meber.total);
+		frappe.model.set_value(cdt, cdn, "balance_log.amount", member.total);
 	} 
 });
 
